@@ -3,6 +3,7 @@ package principal;
 import carrinho.Carrinho;
 import carrinho.Produto;
 import carrinho.ServicoPagamento;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Principal {
@@ -22,13 +23,13 @@ public class Principal {
         ServicoPagamento pagar = new ServicoPagamento();
 
         while (!opcao1.equals("9")) {
-            opcao1 = JOptionPane.showInputDialog("1 - Adicionar produto Carrinho \n2 - Saldo carrinho \n3 - Pagar \n9 - Sair");
+            opcao1 = JOptionPane.showInputDialog("1 - Adicionar produto farrinho \n2 - Quantidade produtos no carrinho \n3 - Listar nomes produtos \n3 - Saldo carrinho \n4 - Pagar \n9 - Sair");
             switch (Integer.parseInt(opcao1)) {
                 //Adição de produto ao carrinho
                 case 1:
                     String opcao2 = "";
                     while (!opcao2.equals("9")) {
-                        opcao2 = JOptionPane.showInputDialog("1 - Adicionar Livro (35.0) \n2 - Adicionar Caneta (5.0) \n3 - Notebook (2000.0) \n9 - Voltar");
+                        opcao2 = JOptionPane.showInputDialog("1 - Adicionar: Livro (35.0) \n2 - Adicionar: Caneta (5.0) \n3 - Adicionar: Notebook (2000.0) \n9 - Voltar");
                         switch (Integer.parseInt(opcao2)) {
                             case 1:
                                 carrinho.adicionar(produto1);
@@ -42,7 +43,7 @@ public class Principal {
                                 carrinho.adicionar(produto3);
                                 System.out.println("Produto 3 adicionado ao carrinho");
                                 break;
-                            case 9:                                
+                            case 9:
                                 System.out.println("Voltando ao menu principal");
                                 break;
                             default:
@@ -51,12 +52,23 @@ public class Principal {
                         }
                     }
                     break;
-                //Mostrar o total do carrinho
                 case 2:
+                    System.out.println("Quantidade de produtos no carrinho:" + carrinho.getQuantidadeProdutos());
+                    break;
+                case 3:
+                    System.out.println("Produtos do carrinho:");
+                    List<String> nomes = carrinho.getNomeProdutos();
+                    for (int i = 0; i < nomes.size(); i++) {
+                        System.out.println(nomes.get(i));
+                    }
+                    break;
+
+                //Mostrar o total do carrinho
+                case 4:
                     JOptionPane.showMessageDialog(null, "Total carrinho: " + carrinho.getTotal());
                     break;
                 //Pagar o carrinho
-                case 3:
+                case 5:
                     double valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor para pagar o carrinho:"));
                     pagar.setSaldo(valor);
                     if (pagar.pagar(carrinho)) {

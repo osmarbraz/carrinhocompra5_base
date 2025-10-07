@@ -9,21 +9,26 @@ public class Carrinho {
     public Carrinho(){
         itens = new ArrayList<>();
     }
-
-    public List<Produto> getItens() {
+    
+    public List<Produto> getItens() { 
         return null;
     }
-
-    public void setItens(List<Produto> itens) {
-        this.itens = itens;
+    
+    public void setItens(List<Produto> itens) {        
     }
     
-    public void adicionar(Produto p) {
-        
+    public void adicionar(Produto p) {        
     }
 
-    public double getTotal() {
-      
+    public double getTotal() {      
         return Double.NaN;
+    }
+    
+    public long getQuantidadeProdutos() {
+        return 0;
+    }
+    
+     public List<String> getNomeProdutos() {     
+        return null;
     }
 }
