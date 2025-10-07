@@ -23,7 +23,7 @@ public class Principal {
         ServicoPagamento pagar = new ServicoPagamento();
 
         while (!opcao1.equals("9")) {
-            opcao1 = JOptionPane.showInputDialog("1 - Adicionar produto ao carrinho \n2 - Quantidade produtos no carrinho \n3 - Listar nomes produtos \n3 - Saldo carrinho \n4 - Pagar \n9 - Sair");
+            opcao1 = JOptionPane.showInputDialog("1 - Adicionar produto ao carrinho \n2 - Quantidade produtos no carrinho \n3 - Listar nomes produtos \n4 - Saldo carrinho \n5 - Pagar \n9 - Sair");
             switch (Integer.parseInt(opcao1)) {
                 //Adição de produto ao carrinho
                 case 1:
@@ -62,7 +62,6 @@ public class Principal {
                         System.out.println(nomes.get(i));
                     }
                     break;
-
                 //Mostrar o total do carrinho
                 case 4:
                     JOptionPane.showMessageDialog(null, "Total carrinho: " + carrinho.getTotal());
