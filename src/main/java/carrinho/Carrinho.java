@@ -10,11 +10,20 @@ public class Carrinho {
         itens = new ArrayList<>();
     }
 
-    public void adicionar(Produto p) {
+    public List<Produto> getItens() {
+        return null;
+    }
 
+    public void setItens(List<Produto> itens) {
+        this.itens = itens;
+    }
+    
+    public void adicionar(Produto p) {
+        
     }
 
     public double getTotal() {
-       return Double.NaN;
+      
+        return Double.NaN;
     }
 }

@@ -24,7 +24,7 @@ public class ServicoPagamento {
      * Verifica se o valor do saldo é suficiente para pagar o carrinho
      *
      * @param carrinho
-     * @return
+     * @return Se é possível pagar o carrinho com o saldo 
      */
     public boolean pagar(Carrinho carrinho) {
         return false;
